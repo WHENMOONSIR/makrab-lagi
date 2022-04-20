@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Survey MAKRAB</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!--===============================================================================================-->
+<script type='text/javascript'>
+$(window).load(function(){
+$("#keikutsertaan").change(function() {
+			console.log($("#keikutsertaan option:selected").val());
+			if ($("#keikutsertaan option:selected").val() == 'Ikut') {
+				$('#kostdmn').prop('hidden', true);
+				$('#masalah').prop('hidden', true);
+				$('#message').prop('hidden', false);
+			} else if($("#keikutsertaan option:selected").val() == 'Tidak') {
+				$('#kostdmn').prop('hidden', false);
+				$('#masalah').prop('hidden', false);
+				$('#message').prop('hidden', true);
+			} else {
+				$('#kostdmn').prop('hidden', true);
+				$('#masalah').prop('hidden', true);
+				$('#message').prop('hidden', true);
+			}
+		});
+});
+</script>
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" name="submit-to-google-sheet">
+				<center>
+					<img src="images/logow.png" height="70%" width="70%" > 
+				</center>
+				<span class="contact100-form-title">
+					WOI DIISI WOI!
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100">Namamu syg</span>
+					<input class="input100" type="text" name="nama" placeholder="ajam" required>
+					<span class="focus-input100"></span>
+				</div>
+
+<!-- 				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<span class="label-input100">Email</span>
+					<input class="input100" type="text" name="email" placeholder="Enter your email addess">
+					<span class="focus-input100"></span>
+				</div> -->
+
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Mo ikut makrab g?</span>
+					<div>
+						<select class="selection-2" name="keikutsertaan" id="keikutsertaan" required>
+							<option value="">Jawab!</option>
+							<option value="Ikut">y</option>
+							<option value="Tidak">g</option>
+							<!-- <option>eCommerce Bussiness</option>
+							<option>UI/UX Design</option>
+							<option>Online Services</option> -->
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<!-- <div class="wrap-input100 input100-select">
+					<span class="label-input100">Budget</span>
+					<div>
+						<select class="selection-2" name="budget">
+							<option>Select Budget</option>
+							<option>1500 $</option>
+							<option>2000 $</option>
+							<option>2500 $</option>
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div> -->
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required" id="kostdmn" hidden>
+					<span class="label-input100">Kost mu alamatnya dimanaa si kalo bole tauu?</span>
+					<textarea class="input100" name="kostdmn" id="kostdmn" placeholder="kost eja kah? ehehew"></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required" id="masalah" hidden>
+					<span class="label-input100">Ada masalah apa? kok ga ikut?</span>
+					<textarea class="input100" name="masalah" placeholder="hei kamuuu, kalo ada masalah bilang aja gapapa kok, misal masalah kendaraan, strict parents, jauh, apapun itu, tulis ajaa disini yaaa ❤️"></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div id="message" class="wrap-input100 validate-input" data-validate = "Message is required" hidden="">
+					<span class="label-input100">Ada pesen buat makrab besok g?</span>
+					<textarea class="input100" name="message" placeholder="barangkali ada yg mo disampein buat makrab nya, misal kek tambahin acara, cari villa dimana, dll. (gausah formal-formal bet lah ya ahaha)"></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button type="submit" class="contact100-form-btn">
+								<span>
+									Kirim
+									<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+								</span>
+						</button>
+					</div>
+				</div>
+			</form>
+			<center>
+				<br>
+				<hr>
+		  <h6>Created By ❤️</h6>
+		  <p>Thanks to Afrzl & Xzamh</p>
+		</center>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<script>
+  const scriptURL = 'https://script.google.com/a/student.uns.ac.id/macros/s/AKfycbz8SZa_59RZGXm2fdrl7t-aOEoz1g4fgQ15uAs7/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+      	location.href = "tenks.html";
+      	form.reset();
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+</body>
+</html>
