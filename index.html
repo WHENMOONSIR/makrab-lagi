@@ -55,10 +55,10 @@ $("#keikutsertaan").change(function() {
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" name="submit-to-google-sheet">
 				<center>
-					<img src="images/logow.png" height="70%" width="70%" > 
+					<img src="images/logo.png" height="70%" width="70%" > 
 				</center>
 				<span class="contact100-form-title">
-					WOI DIISI WOI!
+					SURVEY <br> MAKRAB ICARUS 2022
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
@@ -75,6 +75,7 @@ $("#keikutsertaan").change(function() {
 
 				<div class="wrap-input100 input100-select">
 					<span class="label-input100">Mo ikut makrab g?</span>
+					<span class="label-input100"><b>*Tanggal 28-29 Mei</b></span>
 					<div>
 						<select class="selection-2" name="keikutsertaan" id="keikutsertaan" required>
 							<option value="">Jawab!</option>
@@ -119,7 +120,7 @@ $("#keikutsertaan").change(function() {
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="container-contact100-form-btn">
+				<div class="container-contact100-form-btn kirim">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
 						<button type="submit" class="contact100-form-btn">
@@ -130,12 +131,24 @@ $("#keikutsertaan").change(function() {
 						</button>
 					</div>
 				</div>
+
+				<div class="container-contact100-form-btn d-none loading">
+					<div class="wrap-contact100-form-btn wrap-loading">
+						<div class="contact100-form-bgbtn bgbtn-loading"></div>
+						<button type="button" class="contact100-form-btn btn-loading">
+								<span>
+									Loading...
+									<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+								</span>
+						</button>
+					</div>
+				</div>
 			</form>
 			<center>
 				<br>
 				<hr>
 		  <h6>Created By ❤️</h6>
-		  <p>Thanks to Afrzl & Xzamh</p>
+		  <p>Thanks to <b>Afrzl</b> X <b>Ajam</b> X <b>Jemek</b></p>
 		</center>
 		</div>
 	</div>
@@ -180,11 +193,18 @@ $("#keikutsertaan").change(function() {
 <script>
   const scriptURL = 'https://script.google.com/a/student.uns.ac.id/macros/s/AKfycbz8SZa_59RZGXm2fdrl7t-aOEoz1g4fgQ15uAs7/exec'
   const form = document.forms['submit-to-google-sheet']
+  const btnKirim = document.querySelector(".kirim");
+  const btnLoading = document.querySelector(".loading");
 
   form.addEventListener('submit', e => {
     e.preventDefault()
+    btnLoading.classList.toggle("d-none");
+	  btnKirim.classList.toggle("d-none");
+
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
+      	btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
       	location.href = "tenks.html";
       	form.reset();
       })
